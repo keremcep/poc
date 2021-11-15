@@ -62,6 +62,11 @@ namespace poc.Users
             user.TenantId = AbpSession.TenantId;
             user.IsEmailConfirmed = true;
 
+            if(input.UserName == "kotukelime")
+            {
+                throw new UserFriendlyException("Böyle bir kelime kullanamazsın");
+            }
+
             await _userManager.InitializeOptionsAsync(AbpSession.TenantId);
 
             CheckErrors(await _userManager.CreateAsync(user, input.Password));
