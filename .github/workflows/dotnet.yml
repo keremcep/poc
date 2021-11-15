@@ -21,7 +21,7 @@ jobs:
       run: dotnet restore "aspnet-core/src/poc.Web.Mvc/poc.Web.Mvc.csproj"
     - name: Build
       run: dotnet build "aspnet-core/src/poc.Web.Mvc/poc.Web.Mvc.csproj" --configuration Release --no-restore
-	  
+
   build-angular:
     runs-on: ubuntu-latest
     strategy:
